@@ -1,0 +1,19 @@
+body {
+  text-align: center;
+}
+
+button {
+  display: inline-block;
+  margin: 1em 1em;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.readme {
+  margin: 20pt auto;
+  padding: 30pt;
+  font-size: 1em;
+  max-width: 800px;
+  text-align: left;
+  background-color: #EEE;
+}
