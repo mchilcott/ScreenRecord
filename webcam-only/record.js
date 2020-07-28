@@ -1,6 +1,7 @@
 
 const start = document.getElementById("start");
 const stop = document.getElementById("stop");
+const video = document.querySelector("video");
 let recorder, stream;
 
 
@@ -19,13 +20,12 @@ function download(chunks, fname="capture.mp4") {
 }
 
 async function startRecording() {
-    stream = await navigator.mediaDevices.getDisplayMedia({
-        video: {
-            cursor: "always",
-            mediaSource: "screen"
-        }
+    stream = await navigator.mediaDevices.getUserMedia({
+        audio: true,
+        video: true
     });
     recorder = new MediaRecorder(stream);
+    video.srcObject = stream
 
     const chunks = [];
     recorder.ondataavailable = e => chunks.push(e.data);
